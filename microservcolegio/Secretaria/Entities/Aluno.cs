@@ -7,5 +7,6 @@ using System.Threading.Tasks;
 
 public class Aluno
 {
-    
+    private Guid id {get;set;}
+    private string name {get;set;}
 }
