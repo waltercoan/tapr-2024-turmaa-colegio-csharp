@@ -61,3 +61,14 @@ AccountEndpoint=https://localhost:8081/;AccountKey=C2y6yDjf5/R+ob0N8A7Cgv30VRDJI
 ### Particionamento
 [Partitioning](https://learn.microsoft.com/en-us/azure/cosmos-db/partitioning-overview?wt.mc_id=AZ-MVP-5003638)
 
+### Instalar as bibliotecas
+```
+    cd microservcolegio/
+    dotnet add package Azure.Identity
+    dotnet add package Microsoft.EntityFrameworkCore.Cosmos
+```
+- Criar o arquivo .env na raiz do projeto para setar o ambiente de desenvolvimento
+
+```
+ASPNETCORE_ENVIRONMENT=Development
+```
