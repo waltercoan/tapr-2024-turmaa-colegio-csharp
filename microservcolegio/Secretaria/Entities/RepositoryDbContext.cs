@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.Azure.Cosmos;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ValueGeneration;
 
@@ -17,7 +18,16 @@ public class RepositoryDbContext : DbContext
     {
         optionsBuilder.UseCosmos(
             connectionString: this._configuration["CosmosDBURL"],
-            databaseName: this._configuration["CosmosDBDBName"]
+            databaseName: this._configuration["CosmosDBDBName"],
+            cosmosOptionsAction: options =>
+            {
+                options.ConnectionMode(ConnectionMode.Gateway);
+                options.HttpClientFactory(() => new HttpClient(new HttpClientHandler()
+                {
+                    ServerCertificateCustomValidationCallback = HttpClientHandler.DangerousAcceptAnyServerCertificateValidator
+                }));
+            }
+
         );
     }
     protected override void OnModelCreating(ModelBuilder modelBuilder){
