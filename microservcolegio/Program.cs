@@ -1,4 +1,5 @@
 using microservcolegio.Secretaria.Entities;
+using microservcolegio.Secretaria.Entities.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,6 +10,8 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<RepositoryDbContext>();
+builder.Services.AddScoped<IAlunoService, AlunoService>();
+
 
 var app = builder.Build();
 

@@ -1,0 +1,2 @@
+### Busca todos os alunos
+GET http://localhost:5075/api/v1/aluno
