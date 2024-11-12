@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using microservcolegio.Secretaria.Entities;
 using microservcolegio.Secretaria.Entities.Services;
 using Microsoft.AspNetCore.Mvc;
 
@@ -19,6 +20,16 @@ public class AlunoController : ControllerBase
     public async Task<IResult> Get(){
         var listaAlunos = await _service.GetAllAsync();
         return Results.Ok(listaAlunos);
+    }
+
+    [HttpPost]
+    public async Task<IResult> Post(Aluno aluno){
+        if(aluno == null)
+        {
+            return Results.BadRequest();
+        }
+        var alunoSalvo = await _service.SaveAsync(aluno);
+        return Results.Ok(alunoSalvo);
     }
     
 }
