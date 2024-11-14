@@ -31,5 +31,33 @@ public class AlunoController : ControllerBase
         var alunoSalvo = await _service.SaveAsync(aluno);
         return Results.Ok(alunoSalvo);
     }
+    [HttpPut("{id}")]
+    public async Task<IResult> Put(string id, [FromBody] Aluno aluno)
+    {
+        if(aluno == null || id.Equals(String.Empty))
+        {
+            return Results.BadRequest();
+        }
+        aluno = await _service.UpdateAsync(id,aluno);
+        if(aluno == null)
+        {
+            return Results.NotFound();
+        }
+        return Results.Ok(aluno);
+    }
+    [HttpDelete("{id}")]
+    public async Task<IResult> Delete(string id)
+    {
+        if(id.Equals(String.Empty))
+        {
+            return Results.BadRequest();
+        }
+        var aluno = await this._service.DeleteAsync(id);
+         if(aluno == null)
+        {
+            return Results.NotFound();
+        }
+        return Results.Ok(aluno);
+    }
     
 }

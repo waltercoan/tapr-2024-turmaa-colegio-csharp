@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("microservcolegio")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1fc4e67980529c9ad35ab468b6ebd95a29a33157")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+af9b61aee61ffc40efa70dba957475e22c9da370")]
 [assembly: System.Reflection.AssemblyProductAttribute("microservcolegio")]
 [assembly: System.Reflection.AssemblyTitleAttribute("microservcolegio")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
