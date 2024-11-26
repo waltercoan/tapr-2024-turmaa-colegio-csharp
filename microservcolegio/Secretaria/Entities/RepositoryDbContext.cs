@@ -22,10 +22,10 @@ public class RepositoryDbContext : DbContext
             cosmosOptionsAction: options =>
             {
                 options.ConnectionMode(ConnectionMode.Gateway);
-                options.HttpClientFactory(() => new HttpClient(new HttpClientHandler()
+                /*options.HttpClientFactory(() => new HttpClient(new HttpClientHandler()
                 {
                     ServerCertificateCustomValidationCallback = HttpClientHandler.DangerousAcceptAnyServerCertificateValidator
-                }));
+                }));*/
             }
 
         );
